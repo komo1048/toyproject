@@ -1,30 +1,7 @@
 //frontend/src/app.js
-import React, { Component } from 'react';
-import "./App.css";
-class App extends Component {
-    state = {
-        posts: []
-    };
+import React from "react";
 
-    async componentDidMount() {
-        try {
-            const res = await fetch('http://127.0.0.1:8000/');
-            const posts = await res.json();
-            this.setState({
-                posts
-            });
-        } catch (e) {
-            console.log(e);
-        }
-    }
-
-    render() {
-        return (
-            <div>
-                테스트입니다. 메인페이지;
-            </div>
-        );
-    }
-}
-
+const App = () => {
+  return <div> 테스트 페이지 입니다.</div>;
+};
 export default App;
