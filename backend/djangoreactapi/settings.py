@@ -37,10 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'post',
     'rest_framework',
     'corsheaders',
-    'main'
+    'main',
+    'post',
+    'user',
 ]
 
 MIDDLEWARE = [
@@ -62,7 +63,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            '/home/django/myproject/frontend/public'
+            os.path.join(BASE_DIR,'../frontend','build'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -148,8 +149,6 @@ CORS_ORIGIN_WHITELIST = (
     'http://127.0.0.1:3000',
 )
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
-STATIC_DIR = [
-    os.path.join(BASE_DIR, 'frontend','build','static')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,'../frontend','build','static')
 ]

@@ -4,6 +4,10 @@ import React from "react";
 import Login from "./components/Login";
 import Profile from "./components/Profile";
 import MainHeader from "./components/MainHeader";
+import axios from 'axios';
+
+axios.defaults.xsrfCookieName = "csrftoken";
+axios.defaults.xsrfHeaderName = "X-CSRFToken"
 
 const App = () => {
   return (

@@ -4,7 +4,7 @@ from django.http import HttpResponse
 
 from .models import Main
 
-def index(request, *args, **kwargs):
-    return render(request, 'frontend')
+def index(request):
+    return HttpResponse("Hello")
 
 # Create your views here.
